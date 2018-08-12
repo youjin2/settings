@@ -1,17 +1,20 @@
-## OS: ubuntu16.04.3
+# OS: ubuntu16.04.3
 
+* add user  
+(ref: http://mirwebma.tistory.com/112)  
+```
+$ adduser yjlee
+```
 
-## add sudo user
-# http://firstboos.tistory.com/entry/sudo-user-%EC%B6%94%EA%B0%80
+* add sudo user  
+(ref: http://firstboos.tistory.com/entry/sudo-user-%EC%B6%94%EA%B0%80)  
+```
 $ sudo vim /etc/sudoers
 $ yjlee   ALL=(ALL:ALL) ALL
+```
 
-## add user
-# http://mirwebma.tistory.com/112
-$ adduser yjlee
-
-
-## ssh setting
+* ssh setting  
+```
 # http://programmingskills.net/archives/315
 $ sudo apt-get install openssh-server openssh-client
 $ sudo apt-get install ssh
@@ -21,6 +24,7 @@ $ sudo service ssh restart
 $ sudo ufw enable
 $ sudo ufw allow 22
 $ sudo ufw status verbose
+```
 
 
 ## mount additional HDD
