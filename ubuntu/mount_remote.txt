@@ -1,0 +1,9 @@
+mount remote directory
+
+
+sudo apt-get install sshfs
+
+mac
+sudo sshfs -o allow_other,defer_permissions yjlee@121.166.55.217:/mnt/hbd1/data /mnt/hbd1/data
+ubuntu
+sudo sshfs -o allow_other,default_permissions yjlee@121.166.55.217:/mnt/hbd1/data /mnt/hbd1/data

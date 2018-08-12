@@ -1,0 +1,5 @@
+virtualbox 설치
+* sudo apt-get install virtualbox-5.0
+* 상단 메뉴에서 게스트 확장
+* window 설치되면 확장설치
+* 공유폴더 확인 가능

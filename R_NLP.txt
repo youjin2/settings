@@ -1,0 +1,13 @@
+rJava, Java 설치 관련
+https://opentutorials.org/module/516/5558
+http://ririsdata.blogspot.kr/2016/10/rubuntu-java-rjava.html
+
+요게 핵심인듯
+sudo apt-get install r-cran-rjava  
+sudo R CMD javareconf 
+
+
+KoNLP 관련
+sudo apt-get install libcurl4-openssl-dev
+
+

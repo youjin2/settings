@@ -1,0 +1,7 @@
+show wifi list
+nmcli c
+nmcli d wifi list
+
+connect / disconnect
+nmcli c down AndroidHotspot0350
+nmcli c up AndroidHotspot0350

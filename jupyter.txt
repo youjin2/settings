@@ -1,0 +1,37 @@
+jupyter 위치
+cd ~/.local/share
+
+
+
+권한 변경 (root -> youjin2)
+이렇게 하면 theme 변경 permission denied 해결됨
+terminal에서 jupyter notebook으로 실행하는 것도 동시에 해결
+sudo chown -R youjin2:youjin2 jupyter
+
+기본 browser chrome으로 설정
+cd ~/.jupyter/jupyter_notebook_config.py
+jupyter_notebook_config.py 파일
+# c.NotebookApp.browser = ''
+를
+c.NotebookApp.browser = '/usr/bin/google-chrome'
+로 변경
+
+
+
+
+
+
+jupyter virtualenv에 path 잡기
+This is a tricky part of ipython / Jupyter. The set of kernels available are independent of what your virtualenv is when you start jupyter Notebook. The trick is setting up the the ipykernel package in the environment you want to identify itself uniquely to jupyter. From docs on multiply ipykernels,
+
+source activate ENVNAME
+pip install ipykernel
+python -m ipykernel install --user --name ENVNAME --display-name "Python (whatever you want to call it)"
+If you only want to have a single Python 3 kernel, from the conda environment, just use python -m ipykernel install --user and it will reset the default python to the one in the virtualenv.
+
+And yes, you will need to restart the kernel and re-run the prior steps.
+
+
+
+theme
+jt -t oceans16 -tfs 10 -nf ptsans -nfs 13 -T -N -cellw 90% -fs 11 -lineh 100
