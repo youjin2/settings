@@ -19,3 +19,12 @@ $ cp .vimrc ~/
 
 * Copy .vim to user's home directory  
 $ cp -rf .vim ~/  
+
+* activate vim plugins  
+  - vim command mode  
+  ```
+  : PluginInstall
+  ```
+  - terminal  
+  $ vim +PluginInstall +qall  
+  
