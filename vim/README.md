@@ -1,9 +1,9 @@
 # vim setting
 
 * install bundle  
-``` bash
+```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
-``` bash
+```
 
 * plugin example  
 ```
@@ -22,7 +22,7 @@ $ cp .vimrc ~/
 ```
 
 * Copy .vim to user's home directory  
-``` bash
+```
 $ cp -rf .vim ~/  
 ```
 
@@ -32,7 +32,7 @@ $ cp -rf .vim ~/
   : PluginInstall
   ```
   - terminal  
-  ``` bash
+  ```
   $ vim +PluginInstall +qall  
   ```
   
