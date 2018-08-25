@@ -2,18 +2,14 @@
 
 * Rstudio hanguel  
 (ref: https://minjejeon.github.io/learningstock/2016/11/29/troubleshooting-korean-input-problem-in-rstudio-spyder-ubuntu.html)  
-> rstudio에서 한글 입력이 안될때(1)2
-> 일본 블로그(いくやの斬鉄日記)에서 패치한 fcitx를 사용한다.
-> 임시 디렉토리로 이동해서 파일을 다운받고 설치한다.
-    - Method1: package install
+    - Method1: package install (일본 블로그(いくやの斬鉄日記)에서 패치한 fcitx)
     ```
     $ wget http://ikuya.info/tmp/fcitx-qt5-rstudio.tar.gz
     $ tar xf fcitx-qt5-rstudio.tar.gz
     $ cd fcitx-qt5-rstudio
     $ sudo apt install ./fcitx-frontend-qt5-rstudio_1.0.5-1_amd64.deb ./libfcitx-qt5-1-rstudio_1.0.5-1_amd64.deb
     ```
-    - Method2: install rstudio-server  
-    > 설치 후 웹브라우저에서 http://127.0.0.1:8787로 접속
+    - Method2: install rstudio-server (설치 후 웹브라우저에서 http://127.0.0.1:8787로 접속)  
     (ref: https://www.rstudio.com/products/rstudio/download-server/)  
     ```
     $ sudo apt-get install r-base gdebi-core
