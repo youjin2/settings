@@ -1,7 +1,8 @@
 # R settings
 
 * Rstudio hanguel  
-(ref: https://minjejeon.github.io/learningstock/2016/11/29/troubleshooting-korean-input-problem-in-rstudio-spyder-ubuntu.html)  
+(ref: https://minjejeon.github.io/learningstock/2016/11/29/troubleshooting-korean-input-problem-in-rstudio-spyder-ubuntu.html  
+      https://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)  
     - Method1: package install (일본 블로그(いくやの斬鉄日記)에서 패치한 fcitx)
     ```
     $ wget http://ikuya.info/tmp/fcitx-qt5-rstudio.tar.gz
