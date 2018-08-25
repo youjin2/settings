@@ -1,7 +1,0 @@
-# scp/ssh without password
-$ ssh-keygen -t rsa
-$ scp -P 23 id_rsa.pub yjlee@121.166.55.217:/home/yjlee/.ssh
-# if authorized_keys not exists 
-$ mv id_rsa.pub authorized_keys
-# if authorized keys exists
-$ cat id_rsa.pub >> authorized_keys
