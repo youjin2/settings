@@ -5,6 +5,7 @@
 > rstudio에서 한글 입력이 안될때(1)2  
 > 일본 블로그(いくやの斬鉄日記)에서 패치한 fcitx를 사용한다.  
 > 임시 디렉토리로 이동해서 파일을 다운받고 설치한다.  
+
     - Method1: package install
     ```
     $ wget http://ikuya.info/tmp/fcitx-qt5-rstudio.tar.gz
