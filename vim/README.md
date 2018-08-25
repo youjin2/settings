@@ -26,6 +26,17 @@ $ cp .vimrc ~/
 $ cp -rf .vim ~/  
 ```
 
+* Install YCM python auto-complete plug-in  
+```
+$ cd ~/.vim/bundle
+$ git clone https://github.com/Valloric/YouCompleteMe
+$ git submodule update --init --recursive 
+$ sudo apt-get install build-essential cmake
+$ sudo apt-get install python-dev python3-dev
+$ cd ~/.vim/bundle/YouCompleteMe
+$ ./install.py --clang-completer
+```
+
 * activate vim plugins  
   - vim command mode  
   ```
