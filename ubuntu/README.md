@@ -52,7 +52,7 @@ $ df -h
 
     - ssh/scp connection without password  
     (ref: https://askubuntu.com/questions/762541/ubuntu-16-04-ssh-sign-and-send-pubkey-signing-failed-agent-refused-operation  
-          http://thswave.github.io/linux/2016/01/14/ssh-without-password.html)
+          http://thswave.github.io/linux/2016/01/14/ssh-without-password.html)  
     ```
     # local
     $ ssh-keygen -t rsa
