@@ -22,6 +22,23 @@ $ sudo mount -a
 $ df -h
 ```
 
+* booting problems
+    - dell xps13-9360
+        - booting problem
+    ```
+    $ sudo vim /etc/default/grub
+    # change pcie_aspm=off
+    # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=off"
+    ```
+    - Gigabyte X299 UD4 Pro
+        - random reboot problem
+        - hyper-threading is impossible
+    ```
+    $ sudo vim /etc/default/grub
+    # change acpi=off
+    # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=off"
+    ```
+
 * user settings  
     - add user  
     (ref: http://mirwebma.tistory.com/112)  
