@@ -47,4 +47,10 @@ $ ./install.py --clang-completer
   ```
   $ vim +PluginInstall +qall  
   ```
+
+* use numpy-style docstring (vim-pydocstring plugin)
+```
+$ cd numpy-doc/
+$ cp * ~/.vim/bundle/vim-pydocstring/template/pydocstring/
+```
   
