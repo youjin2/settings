@@ -75,6 +75,7 @@ $ df -h
     $ ssh-keygen -t rsa
     $ cat id_rsa.pub | ssh id@ip -p port 'cat >> .ssh/authorized_keys'
     ```
+
     - share clipboard b/w local/remote
     ```
     # local/remote
@@ -87,6 +88,14 @@ $ df -h
     $ ssh-add
     $ ssh-add -l
     ```
+
+    - Keep ssh connection permanently unless closed
+    ```
+    $ cd /etc/ssh/
+    $ sudo vim ssh_config
+    # uncomment ConnectTimeout 0
+    ```
+
 
 * Mount remote path to local path
 ```
