@@ -2,7 +2,7 @@
 
 * install bundle  
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 * plugin example  
@@ -53,4 +53,19 @@ $ ./install.py --clang-completer
 $ cd numpy-doc/
 $ cp * ~/.vim/bundle/vim-pydocstring/template/pydocstring/
 ```
-  
+
+* vim markdown plugin
+    - install 
+    ```
+    $ sudo apt-get install nodejs-legacy
+    $ sudo apt-get install npm
+    $ sudo npm install -g livedown
+    ```
+    - plugin to vim
+    ```
+    # add below to vimrc
+    # port
+    let g:livedown_port = 11000
+    # launch/kill mapping to F8
+    nmap <F8> :LivedownToggle<cr>
+    ```
