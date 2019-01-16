@@ -78,6 +78,8 @@ $ df -h
 
     - share clipboard b/w local/remote
     ```
+    # remote
+    $ sudo apt-get install vim-gtk
     # local/remote
     $ sudo apt-get install xclip
     # local: change ForwardX11 to yes
