@@ -3,6 +3,7 @@
 SESSION_NAME=$1
 PYTHON_VERSION=$2
 
+tmux kill-session -t $SESSION_NAME
 tmux new -s $SESSION_NAME -n python2 -d
 tmux new-window -n python3
 tmux send-keys -t python2 "source venvs/youjin2_py2/bin/activate" Enter
