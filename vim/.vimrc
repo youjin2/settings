@@ -9,6 +9,7 @@ Plugin 'The-NERD-tree'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'scrooloose/syntastic' " flake8 required
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'shime/vim-livedown' " markdown preview
 " Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -87,3 +88,11 @@ let python_highlight_all = 1
 " sudo apt-get install xclip
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+
+" markdon preview
+" launch/kill mapping
+nmap <F8> :LivedownToggle<cr>
+let g:livedown_port = 11000
+
+" fzf
+set rtp+=~/.fzf

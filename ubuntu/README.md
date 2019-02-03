@@ -160,3 +160,9 @@
     : %s /kr.archive.ubuntu.com/ftp.daum.net/g
     $ sudo apt-get update
     ```
+
+* fzf install
+    ``` bash
+    $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    $ ~/.fzf/install
+    ```
