@@ -166,3 +166,18 @@
     $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     $ ~/.fzf/install
     ```
+    
+* hangul setting
+    * install hangul    
+        ``` bash
+        $ sudo apt-get install fcitx-hangul
+        ```
+        1. go to System Settings > Language Support
+        2. change Keyboard input method system from **ibus** to **fcitx**
+        3. reboot
+    
+    * change shortcut
+        1. go to AllSettings > Keyboard > Shortcuts Tab > Typing
+        2. Switch to Next source, Switch to Previous sourc, Compose Key, Alternative Characters Key Disabled (backspace key)
+        3. change **Compose Key** from **Disabled** to **Right Alt**
+        4. change **Switch to next source** to Multikey
