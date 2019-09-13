@@ -152,7 +152,7 @@ alias vi=/usr/local/bin/vim
 alias vim=/usr/local/bin/vim
 
 # mac vim locale warning
-export LC_ALL=ko_KR.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # activate fzf once opne a terminal
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
