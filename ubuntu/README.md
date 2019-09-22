@@ -181,3 +181,14 @@
         2. Switch to Next source, Switch to Previous sourc, Compose Key, Alternative Characters Key Disabled (backspace key)
         3. change **Compose Key** from **Disabled** to **Right Alt**
         4. change **Switch to next source** to Multikey
+
+* cisco vpn connect
+    * install openconnect
+        ``` bash
+        $ sudo apt-get install openconnect network-manager-openconnect-gnome
+        ```
+    
+    * connect vpn network
+        ``` bash
+        $ sudo openconnect "ip_address"
+        ```
