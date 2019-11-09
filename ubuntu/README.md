@@ -6,23 +6,29 @@
     # check external HDD
     $ sudo su
     $ fdisk -l
+    
     # e.g. partion 1, first/last sector: default, w
     $ fdisk /dev/sdb
+    
     # format file system
     $ sudo mkfs.ext4 /dev/sdb1
+    
     # check uuid
     $ sudo blkid
+    
     # add partition to fstab
     $ sudo vi /etc/fstab (auto-mount)
+    
     # e.g. UUID=0220b7c5-2eb6-4586-9dcc-cb854f5f7e46 /mnt/sdb1               ext4    defaults 0       0 
     # mount
     $ sudo mkdir /mnt/sdb1
     $ sudo mount -a
+    
     # check result
     $ df -h
     ```
 
-* booting problems
+* fix booting problems
     - dell xps13-9360
         - booting problem
         ```
@@ -59,6 +65,7 @@
         ```
         $ sudo apt-get install openssh-server openssh-client
         $ sudo apt-get install ssh
+        
         # firewall setting for remote server (also needs port-forwarding)
         $ sudo service ssh restart
         $ sudo ufw enable
@@ -80,12 +87,16 @@
         ```
         # remote
         $ sudo apt-get install vim-gtk
+        
         # local/remote
         $ sudo apt-get install xclip
+        
         # local: change ForwardX11 to yes
         $ sudo vim /etc/ssh/ssh_config
+        
         # remote: add X11Forwarding to yes
         $ /etc/sshd/sshd_config
+        
         # local
         $ ssh-add
         $ ssh-add -l
@@ -102,8 +113,10 @@
 * Mount remote path to local path
     ```
     $ sudo apt-get install sshfs
+    
     # mac
     $ sudo sshfs -o allow_other,defer_permissions yjlee@ip:/path/to/mount /path/to/mount
+    
     # ubuntu
     $ sudo sshfs -o allow_other,default_permissions yjlee@ip:/path/to/mount /path/to/mount
     ```
@@ -137,14 +150,17 @@
         $ make install
         ```
 
-* You have broken packages (apt-get install) so use these steps  
+* If you have broken packages (apt-get install), use these steps  
     ``` 
     # Fix broken packages:
     $ sudo apt -f install
+    
     # Update:
     $ sudo apt update && sudo apt dist-upgrade
+    
     # Now install normally:
     $ sudo apt install python3-pip
+    
     # Check if it installed:
     $ pip3 --version
     # That should fix that.
@@ -156,6 +172,7 @@
     $ cd /etc/apt
     $ sudo cp sources.list old_sources.list
     $ sudo vim sources.list
+    
     # vim command mode
     : %s /kr.archive.ubuntu.com/ftp.daum.net/g
     $ sudo apt-get update
