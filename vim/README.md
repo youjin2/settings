@@ -28,6 +28,13 @@
 
 * Install YCM python auto-complete plug-in  
     ```
+    # for python 2.x
+    $ sudo apt-get install python-dev
+    
+    # for python 3.x
+    $ sudo apt-get install python3-dev
+
+    # install ycm
     $ cd ~/.vim/bundle
     $ git clone https://github.com/Valloric/YouCompleteMe
     $ cd YouCompleteMe/
