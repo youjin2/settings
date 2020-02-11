@@ -141,4 +141,11 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND 2> /dev/null"
 
 
+# ubuntu 18.04
+export SSL_CERT_DIR=/etc/ssl/certs
+
+
+# cuda-toolkit
+export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64":${LD_LIBRARY_PATH}
+export PATH="/usr/local/cuda-10.0/bin":$PATH
 
