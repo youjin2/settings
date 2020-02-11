@@ -1,11 +1,19 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" plugin configurations
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe' " python auto-complete
+Plugin 'junegunn/fzf.vim' " fuzzy finder
+Plugin 'mileszs/ack.vim' " ack search
+Plugin 'tpope/vim-dadbod' " sql database
+Plugin 'scrooloose/nerdcommenter' " line comment
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'The-NERD-tree'
+Plugin 'tpope/vim-surround' " autocomplete surroundings
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'scrooloose/syntastic' " flake8 required
 Plugin 'Vimjas/vim-python-pep8-indent'
@@ -13,6 +21,7 @@ Plugin 'shime/vim-livedown' " markdown preview
 " Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 
 set hlsearch " 검색어 하이라이팅
 set nu " 줄번호
@@ -34,7 +43,7 @@ set smartcase " 검색시 대소문자 구별
 set smarttab
 set ruler " 현재 커서 위치 표시
 set incsearch
-set clipboard=unnamedplus
+set ic " ignore upper lower case search
 
 " python indent setting
 set tabstop=8
@@ -54,6 +63,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 set splitright
+set splitbelow
 
 " colorscheme jellybeans
 syntax enable
@@ -63,11 +73,23 @@ colorscheme monokai
 " colorscheme gruvbox
 " set t_Co=256
 
+
+" nerdtree
 map <F3> :NERDTreeToggle<cr>
 nmap <silent> <C-m> <Plug>(pydocstring)
+" close vim if remaining window is only nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" open nerdtree by default
+" autocmd vimenter * NERDTree
+" jump to main window
+autocmd VimEnter * wincmd p
+" show hidden files
+let NERDTreeShowHidden=1
+
 
 " check blank space
 set listchars=extends:⇒,precedes:⇐,tab:»·,trail:␣,eol:¬
+
 
 " check python syntax, unsed import statementm, ...
 let g:syntastic_python_checkers=['flake8']
@@ -80,19 +102,75 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
 " python syntax highlight (https://github.com/kh3phr3n/python-syntax)
 syntax on " use python indent
 let python_highlight_all = 1
+
 
 " copy remote to local clipboard
 " sudo apt-get install xclip
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+" mac
+set clipboard=unnamed
+" linux
+" set clipboard=unnamedplus
+
 
 " markdon preview
 " launch/kill mapping
 nmap <F8> :LivedownToggle<cr>
-let g:livedown_port = 11000
+let g:livedown_port = 12000
+
 
 " fzf
 set rtp+=~/.fzf
+" map :FZF to ctrl + p
+nnoremap <silent> <C-p> :FZF -m<cr>
+" hidden file search
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+
+
+" ack silver search
+" set runtimepath^=~/.vim/bundle/ag
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+" split right as default
+let g:ack_mappings = {
+      \  'v': '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+      \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
+
+" set terminal as login shell environment
+set shell=bash\ -l
+" always open vim with terminal
+" :terminal ++rows=10
+" bind ctrl + t as open a terminal
+map <C-t> :terminal ++rows=10 <enter>
+
+
+" airline-theme
+let g:airline_theme='dark'
+
+
+" youcompleteme
+" close window after leaving vim insert mode
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" close window after accepting offered keyword
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+
+" nerd comment settings
+" Add spaces after comment delimiters by default
+" let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+" let g:NERDCompactSexyComs = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+" let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
+
