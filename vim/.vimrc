@@ -173,4 +173,4 @@ let g:ycm_autoclose_preview_window_after_completion = 0
 let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
-
+let g:NERDDefaultAlign = 'left'
